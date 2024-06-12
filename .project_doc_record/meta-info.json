@@ -1,7 +1,12 @@
 {
-  "doc_version": "a603949d44b83991c788bd254990d08121cd1583",
+  "doc_version": "d5f02914c7a16caba3f423eae57c9127ef6923f2",
   "in_generation_process": false,
   "fake_file_reflection": {},
   "jump_files": [],
-  "deleted_items_from_older_meta": []
+  "deleted_items_from_older_meta": [
+    [
+      "test_case.py/BankAccount/display_account_info",
+      "_class_function"
+    ]
+  ]
 }
