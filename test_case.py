@@ -21,7 +21,3 @@ class BankAccount:
 
     def get_balance(self) -> float:
         return self.balance
-
-    def display_account_info(self):
-        print(f"Owner: {self.owner}")
-        print(f"Balance: {self.balance}")
