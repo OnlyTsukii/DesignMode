@@ -1,0 +1,101 @@
+{
+  "test_case.py": [
+    {
+      "type": "ClassDef",
+      "name": "BankAccount",
+      "md_content": [
+        "**BankAccount**: BankAccount的功能是管理银行账户的存款和取款操作。\n**attributes**: \n· owner: 账户所有者的姓名\n· balance: 账户的余额\n**Code Description**: \nBankAccount类具有以下方法：\n- __init__(self, owner, balance=0): 初始化方法，接受账户所有者的姓名和初始余额。\n- deposit(self, amount): 存款方法，将指定金额存入账户。\n- withdraw(self, amount): 取款方法，从账户中取出指定金额。\n- get_balance(self) -> float: 获取当前账户余额的方法。\n**Note**: \n- 存款和取款金额必须为正数。\n- 取款金额不能超过账户余额。\n**Output Example**: \nDeposit of 100 made. New balance: 100\nWithdrawal of 50 made. New balance: 50"
+      ],
+      "code_start_line": 1,
+      "code_end_line": 23,
+      "params": [],
+      "have_return": true,
+      "code_content": "class BankAccount:\n    def __init__(self, owner, balance=0):\n        self.owner = owner\n        self.balance = balance\n\n    def deposit(self, amount):\n        if amount > 0:\n            self.balance += amount\n            print(f\"Deposit of {amount} made. New balance: {self.balance}\")\n        else:\n            print(\"Deposit amount must be positive\")\n\n    def withdraw(self, amount):\n        if 0 < amount <= self.balance:\n            self.balance -= amount\n            print(f\"Withdrawal of {amount} made. New balance: {self.balance}\")\n            return True\n        else:\n            print(\"Insufficient funds or invalid amount\")\n            return False\n\n    def get_balance(self) -> float:\n        return self.balance\n",
+      "name_column": 6,
+      "item_status": "doc_up_to_date",
+      "who_reference_me": [],
+      "reference_who": [],
+      "special_reference_type": []
+    },
+    {
+      "type": "FunctionDef",
+      "name": "__init__",
+      "md_content": [
+        "**__init__**: __init__函数的功能是初始化一个BankAccount对象。\n\n**参数**:\n· owner: 表示银行账户的所有者。\n· balance: 表示银行账户的余额，默认值为0。\n\n**代码描述**:\n__init__函数是一个构造函数，用于初始化BankAccount对象的属性。在函数内部，将传入的owner参数赋值给对象的owner属性，将传入的balance参数赋值给对象的balance属性。如果未提供balance参数，则默认余额为0。\n\n**注意**: 在创建BankAccount对象时，需要传入owner参数，可选择性地传入balance参数。"
+      ],
+      "code_start_line": 2,
+      "code_end_line": 4,
+      "params": [
+        "self",
+        "owner",
+        "balance"
+      ],
+      "have_return": false,
+      "code_content": "    def __init__(self, owner, balance=0):\n        self.owner = owner\n        self.balance = balance\n",
+      "name_column": 8,
+      "item_status": "doc_up_to_date",
+      "who_reference_me": [],
+      "reference_who": [],
+      "special_reference_type": []
+    },
+    {
+      "type": "FunctionDef",
+      "name": "deposit",
+      "md_content": [
+        "**deposit**: deposit函数的功能是存款。\n\n**parameters**:\n· amount: 存款金额，必须为正数。\n\n**Code Description**:\ndeposit函数接受一个参数amount，用于存入银行账户。如果amount大于0，将会将amount加到账户余额上，并打印出存款金额和新的余额；如果amount小于等于0，将会打印出\"存款金额必须为正数\"的提示信息。\n\n**Note**:\n- 在调用deposit函数时，确保传入的存款金额为正数，否则将无法成功存款。"
+      ],
+      "code_start_line": 6,
+      "code_end_line": 11,
+      "params": [
+        "self",
+        "amount"
+      ],
+      "have_return": false,
+      "code_content": "    def deposit(self, amount):\n        if amount > 0:\n            self.balance += amount\n            print(f\"Deposit of {amount} made. New balance: {self.balance}\")\n        else:\n            print(\"Deposit amount must be positive\")\n",
+      "name_column": 8,
+      "item_status": "doc_up_to_date",
+      "who_reference_me": [],
+      "reference_who": [],
+      "special_reference_type": []
+    },
+    {
+      "type": "FunctionDef",
+      "name": "withdraw",
+      "md_content": [
+        "**withdraw**: withdraw函数的功能是从银行账户中提取指定金额的资金。\n\n**parameters**:\n· amount: 表示要提取的金额。\n\n**Code Description**:\n该函数首先检查提取金额是否大于0且不超过账户余额。如果条件满足，将从账户余额中扣除提取金额，并打印出提取金额和新的账户余额。如果条件不满足，将打印出\"资金不足或金额无效\"的提示信息。\n\n**Note**:\n请确保提取金额大于0且不超过账户余额，否则将无法成功提取资金。\n\n**Output Example**:\n如果提取成功，返回True；如果提取失败，返回False。"
+      ],
+      "code_start_line": 13,
+      "code_end_line": 20,
+      "params": [
+        "self",
+        "amount"
+      ],
+      "have_return": true,
+      "code_content": "    def withdraw(self, amount):\n        if 0 < amount <= self.balance:\n            self.balance -= amount\n            print(f\"Withdrawal of {amount} made. New balance: {self.balance}\")\n            return True\n        else:\n            print(\"Insufficient funds or invalid amount\")\n            return False\n",
+      "name_column": 8,
+      "item_status": "doc_up_to_date",
+      "who_reference_me": [],
+      "reference_who": [],
+      "special_reference_type": []
+    },
+    {
+      "type": "FunctionDef",
+      "name": "get_balance",
+      "md_content": [
+        "**get_balance**: get_balance函数的功能是返回当前银行账户的余额。\n**参数**：该函数无参数。\n**代码描述**：该函数通过返回self.balance来获取当前银行账户的余额。\n**注意**：在调用该函数之前，确保已经初始化了银行账户的余额。\n**输出示例**：假设当前银行账户的余额为1000.0，则调用get_balance函数将返回1000.0。"
+      ],
+      "code_start_line": 22,
+      "code_end_line": 23,
+      "params": [
+        "self"
+      ],
+      "have_return": true,
+      "code_content": "    def get_balance(self) -> float:\n        return self.balance\n",
+      "name_column": 8,
+      "item_status": "doc_up_to_date",
+      "who_reference_me": [],
+      "reference_who": [],
+      "special_reference_type": []
+    }
+  ]
+}
