@@ -4,13 +4,14 @@
       "type": "ClassDef",
       "name": "BankAccount",
       "md_content": [
-        "**BankAccount**: BankAccount的功能是管理银行账户的存款和取款操作。\n**attributes**: \n· owner: 账户所有者的姓名\n· balance: 账户的余额\n**Code Description**: \nBankAccount类具有以下方法：\n- __init__(self, owner, balance=0): 初始化方法，接受账户所有者的姓名和初始余额。\n- deposit(self, amount): 存款方法，将指定金额存入账户。\n- withdraw(self, amount): 取款方法，从账户中取出指定金额。\n- get_balance(self) -> float: 获取当前账户余额的方法。\n**Note**: \n- 存款和取款金额必须为正数。\n- 取款金额不能超过账户余额。\n**Output Example**: \nDeposit of 100 made. New balance: 100\nWithdrawal of 50 made. New balance: 50"
+        "**BankAccount**: BankAccount的功能是管理银行账户的存款和取款操作。\n**attributes**: \n· owner: 账户所有者的姓名\n· balance: 账户的余额\n**Code Description**: \nBankAccount类具有以下方法：\n- __init__(self, owner, balance=0): 初始化方法，接受账户所有者的姓名和初始余额。\n- deposit(self, amount): 存款方法，将指定金额存入账户。\n- withdraw(self, amount): 取款方法，从账户中取出指定金额。\n- get_balance(self) -> float: 获取当前账户余额的方法。\n**Note**: \n- 存款和取款金额必须为正数。\n- 取款金额不能超过账户余额。\n**Output Example**: \nDeposit of 100 made. New balance: 100\nWithdrawal of 50 made. New balance: 50",
+        "**BankAccount**: BankAccount的功能是管理银行账户的相关操作。\n\n**attributes**:\n· owner: 账户所有者\n· balance: 账户余额\n\n**Code Description**:\nBankAccount类包含以下方法：\n- \\__init\\__(self, owner, balance=0): 初始化方法，设置账户所有者和初始余额。\n- deposit(self, amount): 存款方法，增加账户余额。\n- withdraw(self, amount): 取款方法，减少账户余额。\n- get_balance(self) -> float: 获取当前账户余额。\n- display_account_info(self): 显示账户信息，包括所有者和余额。\n\n**Note**:\n- 存款金额必须为正数。\n- 取款金额必须大于0且不超过账户余额。\n\n**Output Example**:\nOwner: Alice\nBalance: 1000.0"
       ],
       "code_start_line": 1,
-      "code_end_line": 23,
+      "code_end_line": 27,
       "params": [],
       "have_return": true,
-      "code_content": "class BankAccount:\n    def __init__(self, owner, balance=0):\n        self.owner = owner\n        self.balance = balance\n\n    def deposit(self, amount):\n        if amount > 0:\n            self.balance += amount\n            print(f\"Deposit of {amount} made. New balance: {self.balance}\")\n        else:\n            print(\"Deposit amount must be positive\")\n\n    def withdraw(self, amount):\n        if 0 < amount <= self.balance:\n            self.balance -= amount\n            print(f\"Withdrawal of {amount} made. New balance: {self.balance}\")\n            return True\n        else:\n            print(\"Insufficient funds or invalid amount\")\n            return False\n\n    def get_balance(self) -> float:\n        return self.balance\n",
+      "code_content": "class BankAccount:\n    def __init__(self, owner, balance=0):\n        self.owner = owner\n        self.balance = balance\n\n    def deposit(self, amount):\n        if amount > 0:\n            self.balance += amount\n            print(f\"Deposit of {amount} made. New balance: {self.balance}\")\n        else:\n            print(\"Deposit amount must be positive\")\n\n    def withdraw(self, amount):\n        if 0 < amount <= self.balance:\n            self.balance -= amount\n            print(f\"Withdrawal of {amount} made. New balance: {self.balance}\")\n            return True\n        else:\n            print(\"Insufficient funds or invalid amount\")\n            return False\n\n    def get_balance(self) -> float:\n        return self.balance\n\n    def display_account_info(self):\n        print(f\"Owner: {self.owner}\")\n        print(f\"Balance: {self.balance}\")\n",
       "name_column": 6,
       "item_status": "doc_up_to_date",
       "who_reference_me": [],
@@ -91,6 +92,25 @@
       ],
       "have_return": true,
       "code_content": "    def get_balance(self) -> float:\n        return self.balance\n",
+      "name_column": 8,
+      "item_status": "doc_up_to_date",
+      "who_reference_me": [],
+      "reference_who": [],
+      "special_reference_type": []
+    },
+    {
+      "type": "FunctionDef",
+      "name": "display_account_info",
+      "md_content": [
+        "**display_account_info**: display_account_info函数的功能是打印账户信息。\n\n**参数**:\n· 无参数\n\n**代码描述**:\ndisplay_account_info函数用于打印银行账户的所有者和余额信息。通过调用该函数，将会输出类似于\"Owner: XXX\"和\"Balance: XXX\"的信息，其中XXX分别代表账户的所有者和余额。\n\n**注意**: 在调用display_account_info函数时，确保已经实例化了BankAccount类的对象，并且该对象具有owner和balance属性。"
+      ],
+      "code_start_line": 25,
+      "code_end_line": 27,
+      "params": [
+        "self"
+      ],
+      "have_return": false,
+      "code_content": "    def display_account_info(self):\n        print(f\"Owner: {self.owner}\")\n        print(f\"Balance: {self.balance}\")\n",
       "name_column": 8,
       "item_status": "doc_up_to_date",
       "who_reference_me": [],
