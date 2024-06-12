@@ -1,18 +1,19 @@
 ## ClassDef BankAccount
-**BankAccount**: BankAccount的功能是管理银行账户的存款、取款和余额查询。
+**BankAccount**: BankAccount的功能是管理银行账户的相关操作。
 **attributes**:
 · owner: 账户所有者
 · balance: 账户余额
 **Code Description**:
-BankAccount类包含了以下方法：
-- \__init\__(self, owner, balance=0): 初始化银行账户，设置账户所有者和初始余额（默认为0）。
-- deposit(self, amount): 存款方法，如果存款金额大于0，则增加余额并显示新的余额；否则提示存款金额必须为正数。
-- withdraw(self, amount): 取款方法，如果取款金额大于0且小于等于余额，则减少余额并显示新的余额；否则提示余额不足或金额无效。
-- get_balance(self) -> float: 查询余额方法，返回当前余额。
-**Note**: 在使用存款和取款方法时，确保金额为正数且不超过账户余额。
-**Output Example**: 
-Deposit of 100 made. New balance: 100
-Withdrawal of 50 made. New balance: 50
+BankAccount类具有以下方法：
+- \__init\__(self, owner, balance=0)：初始化银行账户，设置账户所有者和初始余额（默认为0）。
+- deposit(self, amount)：存款操作，如果存款金额大于0，则增加余额并显示新余额；否则提示存款金额必须为正数。
+- withdraw(self, amount)：取款操作，如果取款金额大于0且小于等于余额，则减少余额并显示新余额；否则提示余额不足或取款金额无效。
+- get_balance(self) -> float：获取当前余额。
+- display_account_info(self)：显示账户信息，包括账户所有者和余额。
+**Note**: 在使用withdraw方法时，需注意取款金额必须大于0且不超过当前余额。
+**Output Example**:
+Owner: Alice
+Balance: 1000.0
 ### FunctionDef __init__(self, owner, balance)
 **__init__**: __init__函数的功能是初始化一个BankAccount对象。
 
@@ -58,4 +59,10 @@ deposit函数接受一个参数amount，用于存入银行账户。如果amount�
 **代码描述**：该函数通过返回self.balance来获取当前银行账户的余额。
 **注意**：在调用该函数之前，确保已经初始化了银行账户的余额。
 **输出示例**：假设当前银行账户的余额为1000.0，则调用get_balance函数将返回1000.0。
+***
+### FunctionDef display_account_info(self)
+**display_account_info**: display_account_info函数的作用是打印账户所有者和余额信息。
+**参数**: 该函数无参数。
+**代码描述**: display_account_info函数通过使用self.owner和self.balance打印出账户所有者和余额信息。
+**注意**: 在调用display_account_info函数时，确保已经设置了owner和balance属性的值，以便正确显示账户信息。
 ***
