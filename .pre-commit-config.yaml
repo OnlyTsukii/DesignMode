@@ -3,8 +3,8 @@ repos:
     hooks:
     - id: repo-agent
       name: RepoAgent
-      entry: repoagent
-      language: system
+      entry: repoagent run --target-repo-path C:\Users\ccl\Desktop\RepoAgent\DesignMode
+      language: python
       pass_filenames: false # 阻止pre commit传入文件名作为参数
       # 可以指定钩子触发的文件类型，但是目前只支持python
       types: [python]
